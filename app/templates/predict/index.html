@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Прогноза - Iris Classifier{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container-lg">
+        <h1 class="display-5 fw-bold mb-4">Направете прогноза</h1>
+        <p class="fs-5 text-muted mb-5">
+            Въведете характеристиките на цветето Ирис, за да получите прогноза за вида.
+        </p>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <form method="POST">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Дължина на чашелистниците (см)</label>
+                        <input type="number" class="form-control" step="0.1" placeholder="Например: 5.1" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Ширина на чашелистниците (см)</label>
+                        <input type="number" class="form-control" step="0.1" placeholder="Например: 3.5" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Дължина на листенцата (см)</label>
+                        <input type="number" class="form-control" step="0.1" placeholder="Например: 1.4" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Ширина на листенцата (см)</label>
+                        <input type="number" class="form-control" step="0.1" placeholder="Например: 0.2" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-lg fw-bold w-100"
+                            style="background-color: #6b4c9a; color: white; border: none;">
+                        Направи прогноза
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

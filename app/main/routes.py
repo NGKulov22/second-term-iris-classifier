@@ -4,7 +4,3 @@ from . import main_bp
 @main_bp.route("/")
 def index():
     return render_template("main/index.html")
-
-@main_bp.route("/dashboard")
-def dashboard():
-    return render_template("main/dashboard.html")

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Iris Classifier{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container-lg">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <h1 class="display-5 fw-bold mb-4">Register</h1>
+
+                <form method="POST" action="{{ url_for('auth.register') }}">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Username</label>
+                        <input type="text" class="form-control" name="username" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Email</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Password</label>
+                        <input type="password" class="form-control" name="password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-lg fw-bold w-100"
+                            style="background-color: #6b4c9a; color: white; border: none;">
+                        Register
+                    </button>
+                </form>
+
+                <p class="text-center mt-4">
+                    Имаш вече профил? <a href="{{ url_for('auth.login') }}" class="text-decoration-none" style="color: #6b4c9a;">Login тук</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Данни - Iris Classifier{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container-lg">
+        <h1 class="display-5 fw-bold mb-4">Данни</h1>
+        <p class="fs-5 text-muted mb-4">
+            Преглед на набора от данни за цветята Ирис.
+        </p>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Характеристика</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sepal Length</td>
+                        <td>Дължина на чашелистниците (см)</td>
+                    </tr>
+                    <tr>
+                        <td>Sepal Width</td>
+                        <td>Ширина на чашелистниците (см)</td>
+                    </tr>
+                    <tr>
+                        <td>Petal Length</td>
+                        <td>Дължина на листенцата (см)</td>
+                    </tr>
+                    <tr>
+                        <td>Petal Width</td>
+                        <td>Ширина на листенцата (см)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Резултати - Iris Classifier{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container-lg">
+        <h1 class="display-5 fw-bold mb-4">Резултати</h1>
+        <p class="fs-5 text-muted mb-5">
+            История на направените прогнози.
+        </p>
+
+        <div class="alert alert-info" role="alert">
+            <strong>Информация:</strong> Тук ще се показват резултатите от направените прогнози.
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Последна прогноза</h5>
+                        <p class="text-muted">Все още няма направени прогнози.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
