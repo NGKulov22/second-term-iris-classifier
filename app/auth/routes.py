@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for, flash
 from . import auth_bp
-from flask_login import login_user, logout_user, login_required
+from flask_login import login_user, logout_user, login_required, current_user
 from app.auth.forms import RegistrationForm, LoginForm
 from app.models import User
 from app import db
@@ -8,6 +8,8 @@ from app import db
 @auth_bp.route("/register", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
+    if current_user.is_authenticated:
+        return redirect(url_for("main.index"))
 
     if form.validate_on_submit():
         user = User(
@@ -28,6 +30,8 @@ def register():
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
+    if current_user.is_authenticated:
+        return redirect(url_for("main.index"))
 
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
