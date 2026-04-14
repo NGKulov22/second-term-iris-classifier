@@ -19,7 +19,43 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Последна прогноза</h5>
-                        <p class="text-muted">Все още няма направени прогнози.</p>
+
+                        {% if last_prediction %}
+                            
+
+                            <ul class="list-group mb-3">
+                                <li class="list-group-item">
+                                    <strong>Sepal Length:</strong> {{ last_prediction.sepal_length }}
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Sepal Width:</strong> {{ last_prediction.sepal_width }}
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Petal Length:</strong> {{ last_prediction.petal_length }}
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Petal Width:</strong> {{ last_prediction.petal_width }}
+                                </li>
+                            </ul>
+
+                            <h5>
+                                Резултат:
+                                {% if last_prediction.prediction == "Iris-setosa" %}
+                                    <span class="badge bg-success">Setosa</span>
+                                {% else %}
+                                    <span class="badge bg-secondary">Not Setosa</span>
+                                {% endif %}
+                            </h5>
+
+                            <p class="mt-2">
+                                <strong>Probability:</strong>
+                                {{ (last_prediction.probability * 100) | round(2) }}%
+                            </p>
+
+                        {% else %}
+                            <p class="text-muted">Все още няма направени прогнози.</p>
+                        {% endif %}
+
                     </div>
                 </div>
             </div>

@@ -13,28 +13,29 @@
         <div class="row">
             <div class="col-lg-6">
                 <form method="POST">
+
                     <div class="mb-4">
                         <label class="form-label fw-bold">Дължина на чашелистниците (см)</label>
-                        <input type="number" class="form-control" step="0.1" placeholder="Например: 5.1" required>
+                        <input type="number" name="sepal_length" class="form-control" step="0.1" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="form-label fw-bold">Ширина на чашелистниците (см)</label>
-                        <input type="number" class="form-control" step="0.1" placeholder="Например: 3.5" required>
+                        <input type="number" name="sepal_width" class="form-control" step="0.1" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="form-label fw-bold">Дължина на листенцата (см)</label>
-                        <input type="number" class="form-control" step="0.1" placeholder="Например: 1.4" required>
+                        <input type="number" name="petal_length" class="form-control" step="0.1" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="form-label fw-bold">Ширина на листенцата (см)</label>
-                        <input type="number" class="form-control" step="0.1" placeholder="Например: 0.2" required>
+                        <input type="number" name="petal_width" class="form-control" step="0.1" required>
                     </div>
 
                     <button type="submit" class="btn btn-lg fw-bold w-100"
-                            style="background-color: #6b4c9a; color: white; border: none;">
+                        style="background-color: #6b4c9a; color: white;">
                         Направи прогноза
                     </button>
                 </form>

@@ -23,6 +23,10 @@ def register():
 
         flash("Registration successful!", "success")
         return redirect(url_for("auth.login"))
+    elif form.errors:
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash(f"{getattr(form, field).label.text}: {error}", "danger")
 
     return render_template("auth/register.html", form=form)
 
@@ -37,8 +41,10 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
 
         if not user or not user.check_password(form.password.data):
-            flash("Невалидно потребителско име или парола", "danger")
-            return render_template("auth/login.html", form=form)
+            form.username.errors.append("Invalid username or password")
+            form.password.errors.append("Invalid username or password")
+            
+            return render_template ("auth/login.html", form=form)
 
         login_user(user)
         return redirect(url_for("main.dashboard"))

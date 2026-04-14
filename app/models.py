@@ -14,6 +14,20 @@ class User(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+    
+    
+class Prediction(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
+    sepal_length = db.Column(db.Float)
+    sepal_width = db.Column(db.Float)
+    petal_length = db.Column(db.Float)
+    petal_width = db.Column(db.Float)
+
+    prediction = db.Column(db.Integer)
+    probability = db.Column(db.Float)
+
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 @login_manager.user_loader
 def load_user(user_id):

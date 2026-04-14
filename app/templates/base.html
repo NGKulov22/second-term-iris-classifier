@@ -17,8 +17,10 @@
 
                 <!-- Navigation Menu -->
                 <div class="d-flex gap-4">
+                    {% if current_user.is_authenticated %}
                     <a href="{{ url_for('predict.predict') }}" class="text-decoration-none text-dark">Прогноза</a>
                     <a href="{{ url_for('results.results') }}" class="text-decoration-none text-dark">Резултати</a>
+                    {% endif %}
                 </div>
 
                 <div class="d-flex gap-3">
